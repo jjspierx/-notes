@@ -5,8 +5,7 @@ https://archlinux.org/download/
 ```sh
 > df  #To see list of drives and get device name of USB drive
 > sudo mkfs.ntfs /dev/[device_name]  #Formats flash drive
-``
-
+```
 
 ##### Mount ISO to USB
 ```sh
@@ -22,15 +21,13 @@ https://archlinux.org/download/
 > setfont [font-name] #This is optional, otherwise use default font
 ```
 
-
 ##### Connect to WiFi
 ```sh
 > iwctl device list #Get list of devices
 > iwctl station DEVICE scan 
 > iwctl station DEVICE get-networks #List available networks
 > iwctl --passphrase=****** station [DEVICE] connect [SSID] #Connect to SSID
-``
-
+```
 
 ##### Update the system clock
 ```sh
@@ -40,7 +37,7 @@ https://archlinux.org/download/
 ##### Partition Disks
 ```sh
 > fdisk -l #List disk devices
->fdisk /dev/nvme0n1 #Use actual device name
+> fdisk /dev/nvme0n1 #Use actual device name
 ```
  
 ##### Create 3 partitions
@@ -110,7 +107,7 @@ https://archlinux.org/download/
 
 ##### Generate default grub configuration
 ```sh
->  grub-mkconfig -o /boot/grub/grub.cfg #Generates /boot/grub/grub.cfg
+> grub-mkconfig -o /boot/grub/grub.cfg #Generates /boot/grub/grub.cfg
 ```
 
 ##### Install some other necessary packages while we are at it
@@ -131,7 +128,6 @@ https://archlinux.org/download/
 > systemctl enable NetworkManager.service
 ```
 
-
 ##### Connect to WiFi
 ```sh
 > nmcli device #Get list of network devices
@@ -148,11 +144,10 @@ https://archlinux.org/download/
 > passwd [username]
 ```
 
-
 ##### Add some security
-#####Loading Microcode (provides updates for bug-fixes that can be critical to system stability
+##### Loading Microcode (provides updates for bug-fixes that can be critical to system stability
 
-```
+```sh
 > pacman -S intel-ucode
 ```
 or
@@ -181,7 +176,7 @@ or
 ```
 
 
-##### Install Desktop Environment (kde shown below)
+##### Install Desktop Environment (KDE shown below)
 ```sh
 > pacman -S plasma
 ```
@@ -249,7 +244,6 @@ Do Not Use *sudo* with yay
 > chsh -s /usr/bin/zsh #change to zsh (or any other than you want)
 ```
 
-
 ##### Setup powerlevel10k shell prompt for zsh (optional)
 *powerlevel10k is a really nice and functonal shell prompt, especially for programmers*
 [powerlevel10K setup instructions](https://github.com/romkatv/powerlevel10k?tab=readme-ov-files)
@@ -272,4 +266,3 @@ Do Not Use *sudo* with yay
 > vim /etc/systemd/logind.conf #Un-comment lines about lid switch, and set to ignore
 > systemctl restart systemd-logind.service
 ```
-
